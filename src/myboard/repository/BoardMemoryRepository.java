@@ -3,6 +3,7 @@ package myboard.repository;
 import myboard.entity.Board;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -49,9 +50,13 @@ public class BoardMemoryRepository implements BoardRepository {
     }
     @Override
     public void deleteBoard(int id){
-        for(Board board : boards){
-            if(id == board.getId()) boards.remove(board);
+
+        for(Iterator<Board> it = boards.iterator(); it.hasNext(); ){
+
+            Board board = it.next();
+            if(id == board.getId()) it.remove();
         }
+
     }
     @Override
     public Board matchingId(int id){
