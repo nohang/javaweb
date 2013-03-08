@@ -35,7 +35,6 @@ public class BoardLoginServlet extends HttpServlet{
             HttpSession session = request.getSession();
             session.setAttribute("userId",userId);
             if(request.getServletContext().getAttribute("connect")==null){
-                System.out.println("==null");
                 request.getServletContext().setAttribute("connect",new Integer(0));
             }
             int connect = (Integer)request.getServletContext().getAttribute("connect")+1;

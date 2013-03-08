@@ -30,7 +30,6 @@ public class BoardUpdateServlet extends HttpServlet {
             board.setTitle(request.getParameter("title"));
             board.setPw(request.getParameter("pw"));
             board.setContent(request.getParameter("content"));
-        System.out.println("board update = " + board);
             boardRepository.updateBoard(board);
             response.sendRedirect("/board/list");
 

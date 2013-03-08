@@ -24,7 +24,6 @@ public class BoardUpdateFormServlet extends HttpServlet {
             response.sendRedirect("/board/login");
         }
         int id = Integer.parseInt(request.getParameter("id"));
-        System.out.println(boardRepository.matchingId(id));
         request.setAttribute("board",boardRepository.matchingId(id));
         RequestDispatcher view = request.getRequestDispatcher("/board/boardUpdate.jsp");
         view.forward(request, response);
