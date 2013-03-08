@@ -2,6 +2,9 @@ package myboard.repository;
 
 import myboard.entity.Board;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -16,4 +19,6 @@ public interface BoardRepository {
     void deleteBoard(int id);
     Board matchingId(int id);
     void updateBoard(Board board);
+    boolean isLogin(HttpServletRequest request);
+    String getUserId(HttpServletRequest request);
 }

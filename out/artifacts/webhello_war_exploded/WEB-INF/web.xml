@@ -64,5 +64,29 @@
         <servlet-name>boardDetailServlet</servlet-name>
         <url-pattern>/board/detail</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>boardLoginServlet</servlet-name>
+        <servlet-class>myboard.controller.BoardLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>boardLoginServlet</servlet-name>
+        <url-pattern>/board/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>boardLoginFormServlet</servlet-name>
+        <servlet-class>myboard.controller.BoardLoginFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>boardLoginFormServlet</servlet-name>
+        <url-pattern>/board/loginForm</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>boardLogoutServlet</servlet-name>
+        <servlet-class>myboard.controller.BoardLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>boardLogoutServlet</servlet-name>
+        <url-pattern>/board/logout</url-pattern>
+    </servlet-mapping>
 
 </web-app>

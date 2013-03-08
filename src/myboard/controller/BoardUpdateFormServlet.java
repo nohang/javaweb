@@ -20,7 +20,9 @@ import java.io.IOException;
 public class BoardUpdateFormServlet extends HttpServlet {
     BoardRepository boardRepository = BoardMemoryRepository.getInstance();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        if(!boardRepository.isLogin(request)){
+            response.sendRedirect("/board/login");
+        }
         int id = Integer.parseInt(request.getParameter("id"));
         System.out.println(boardRepository.matchingId(id));
         request.setAttribute("board",boardRepository.matchingId(id));

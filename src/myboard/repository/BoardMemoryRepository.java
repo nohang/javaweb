@@ -2,6 +2,9 @@ package myboard.repository;
 
 import myboard.entity.Board;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -79,6 +82,18 @@ public class BoardMemoryRepository implements BoardRepository {
            }
         }
     }
+    @Override
+    public boolean isLogin(HttpServletRequest request){
+        if(request.getSession().getAttribute("userId")!=null) return true;
+        else return false;
+    }
+    @Override
+    public String getUserId(HttpServletRequest request){
+
+        return null;
+
+    }
+
     private synchronized int generateId() {
         return keyStore++;
     }

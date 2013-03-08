@@ -1,6 +1,8 @@
 package myboard.controller;
 
 import myboard.entity.Board;
+import myboard.repository.BoardMemoryRepository;
+import myboard.repository.BoardRepository;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,8 +20,11 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class BoardInsertFormServlet extends HttpServlet {
+    BoardRepository boardRepository = BoardMemoryRepository.getInstance();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        if(!boardRepository.isLogin(request)){
+            response.sendRedirect("/board/login");
+        }
         RequestDispatcher view = request.getRequestDispatcher("/board/boardInsert.jsp");
         view.forward(request, response);
     }
