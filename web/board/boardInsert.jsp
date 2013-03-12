@@ -11,7 +11,6 @@
     <title></title>
 </head>
 <body>
-<body>
 <form action="/board/save" method="post">
     <table>
         <tr>
@@ -35,6 +34,8 @@
         </tr>
     </table>
 </form>
-</body>
+    <jsp:include page="footer.jsp">
+        <jsp:param name="footer" value="aaa"/>
+    </jsp:include>
 </body>
 </html>

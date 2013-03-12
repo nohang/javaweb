@@ -7,28 +7,29 @@
 --%>
 <%@ page import="myboard.entity.Board" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title></title>
 </head>
 <body>
-
-    <%Board board = (Board) request.getAttribute("board");%>
     <table>
         <tr>
             <td>Title</td>
-            <td><%= board.getTitle()%></td>
+            <td>${board.title}</td>
         </tr>
         <tr>
             <td>Writer</td>
-            <td><%= board.getWriter()%></td>
+            <td>${board.writer}</td>
         </tr>
         <tr>
             <td>Content</td>
-            <td><%= board.getContent()%></td>
+            <td>${board.content}</td>
         </tr>
     </table>
+    <jsp:include page="footer.jsp">
+        <jsp:param name="footer" value="aaa"/>
+    </jsp:include>
 </body>
 
 </html>

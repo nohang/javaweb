@@ -7,6 +7,7 @@
 --%>
 <%@ page import="myboard.repository.BoardRepository" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title></title>
@@ -16,25 +17,29 @@
     <table>
         <tr>
             <td>ID</td>
-            <%
-                Object userId = request.getAttribute("userId");
-                if(userId!=null)
-                    out.write("<td><input type=\"text\" name=\"userId\" value = "+userId+"></td>");
-                else
-                    out.write("<td><input type=\"text\" name=\"userId\"></td>");
-            %>
+            <c:choose>
+                <c:when test='${not empty userId}'>
+                    <td><input type="text" name="userId" value = "${userId}"></td>
+                </c:when>
+                <c:otherwise>
+                    <td><input type="text" name="userId"></td>
+                </c:otherwise>
+            </c:choose>
         </tr>
         <tr>
             <td>Password</td>
             <td><input type="password" name="passWord"></td>
         </tr>
         <tr>
-            <%
-                if(userId!=null)
-                    out.write("<td><input type=\"checkbox\" name=\"checked\" checked/> </td>");
-                else
-                    out.write("<td><input type=\"checkbox\" name=\"checked\"> </td>");
-            %>
+            <c:choose>
+                <c:when test='${not empty userId}'>
+                    <td><input type="checkbox" name="checked" checked/></td>
+                </c:when>
+                <c:otherwise>
+                    <td><input type="checkbox" name="checked"></td>
+                </c:otherwise>
+            </c:choose>
+
 
         </tr>
         <tr>
@@ -42,5 +47,8 @@
         </tr>
     </table>
 </form>
+<jsp:include page="footer.jsp">
+    <jsp:param name="footer" value="aaa"/>
+</jsp:include>
 </body>
 </html>

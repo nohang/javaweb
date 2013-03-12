@@ -39,7 +39,9 @@ public class BoardLoginFormServlet extends HttpServlet{
         int connect = (Integer)request.getServletContext().getAttribute("connect");
 
         request.getServletContext().setAttribute("connect",new Integer(connect));
+
         request.setAttribute("userId",userId);
+
         request.setAttribute("connect",new Integer(connect));
         view.forward(request, response);
 
