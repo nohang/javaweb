@@ -36,7 +36,7 @@
        var move = function(url) {
           location.href = url;
       }
-  </script>
+    </script>
   <jsp:include page="footer.jsp">
       <jsp:param name="footer" value="aaa"/>
   </jsp:include>
