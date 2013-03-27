@@ -31,7 +31,7 @@ public class BoardLoginServlet extends HttpServlet{
             response.addCookie(cookie);
         }
         if(request.getParameter("userId").equals("a") && request.getParameter("passWord").equals("b")){
-
+            System.out.println("1");
             HttpSession session = request.getSession();
             session.setAttribute("userId",userId);
             if(request.getServletContext().getAttribute("connect")==null){

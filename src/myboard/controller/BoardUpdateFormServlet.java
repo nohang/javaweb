@@ -1,5 +1,6 @@
 package myboard.controller;
 
+import myboard.repository.BoardDBRepository;
 import myboard.repository.BoardMemoryRepository;
 import myboard.repository.BoardRepository;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class BoardUpdateFormServlet extends HttpServlet {
-    BoardRepository boardRepository = BoardMemoryRepository.getInstance();
+    BoardRepository boardRepository = BoardDBRepository.getInstance();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(!boardRepository.isLogin(request)){
             response.sendRedirect("/board/login");

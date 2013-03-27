@@ -1,6 +1,7 @@
 package myboard.controller;
 
 import myboard.entity.Board;
+import myboard.repository.BoardDBRepository;
 import myboard.repository.BoardMemoryRepository;
 import myboard.repository.BoardRepository;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class BoardDeleteServlet extends HttpServlet {
-    BoardRepository boardRepository = BoardMemoryRepository.getInstance();
+    BoardRepository boardRepository = BoardDBRepository.getInstance();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       int id = Integer.parseInt(request.getParameter("id"));
         System.out.println(id);

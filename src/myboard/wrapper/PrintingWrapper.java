@@ -17,15 +17,15 @@ public class PrintingWrapper extends HttpServletRequestWrapper{
 
     @Override
     public Object getAttribute(String name) {
-        System.out.println("PrintingWrapper.getAttribute");
-        System.out.println("name = [" + name + "]");
+//        System.out.println("PrintingWrapper.getAttribute");
+//        System.out.println("name = [" + name + "]");
         return super.getAttribute(name);    //To change body of overridden methods use File | Settings | File Templates.
     }
 
     @Override
     public void setAttribute(String name, Object o) {
-        System.out.println("PrintingWrapper.setAttribute");
-        System.out.println("name = [" + name + "], o = [" + o + "]");
+//        System.out.println("PrintingWrapper.setAttribute");
+//        System.out.println("name = [" + name + "], o = [" + o + "]");
         super.setAttribute(name, o);    //To change body of overridden methods use File | Settings | File Templates.
     }
 }

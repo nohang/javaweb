@@ -2,6 +2,7 @@ package myboard.controller;
 
 import hello.ResultModel;
 import myboard.entity.Board;
+import myboard.repository.BoardDBRepository;
 import myboard.repository.BoardMemoryRepository;
 import myboard.repository.BoardRepository;
 
@@ -21,16 +22,19 @@ import java.util.List;
  */
 public class BoardListServlet extends HttpServlet{
 
-    BoardRepository boardRepository = BoardMemoryRepository.getInstance();
+    BoardRepository boardRepository = BoardDBRepository.getInstance();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(!boardRepository.isLogin(request)){
 //            getServletContext() sc =  event
+            System.out.println("3");
             response.sendRedirect("/board/loginForm");
             return;
         }
+        System.out.println("2");
         //1. model에서 데이터 조회
         List<Board> boards = boardRepository.getBoards();
+
 
 
         //2. request에 데이터 셋팅

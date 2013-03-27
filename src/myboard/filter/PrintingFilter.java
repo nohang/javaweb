@@ -27,9 +27,9 @@ public class PrintingFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
 
-        System.out.println("===Printing Filter===");
-        System.out.println("httpServletRequestURI = " + httpServletRequest.getRequestURI());
-        System.out.println("httpServletRequestIP = " + httpServletRequest.getRemoteAddr());
+//        System.out.println("===Printing Filter===");
+//        System.out.println("httpServletRequestURI = " + httpServletRequest.getRequestURI());
+//        System.out.println("httpServletRequestIP = " + httpServletRequest.getRemoteAddr());
 
         PrintingWrapper printingWrapper = new PrintingWrapper(httpServletRequest);
 

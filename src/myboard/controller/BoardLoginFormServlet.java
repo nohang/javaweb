@@ -36,6 +36,15 @@ public class BoardLoginFormServlet extends HttpServlet{
             request.getServletContext().setAttribute("connect",new Integer(0));
         }
 
+//        int a[]={1,2,3,4,7,8,11,12,16,19,20,22,24,34,40,41};
+//
+//        for(int j=0 ; j< a.length;j++){
+//             if(Math.random()*10+1>5){
+//                 System.out.println(a[j]);
+//             }
+//
+//        }
+
         int connect = (Integer)request.getServletContext().getAttribute("connect");
 
         request.getServletContext().setAttribute("connect",new Integer(connect));
